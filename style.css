@@ -1,0 +1,330 @@
+:root {
+  --color-mode: "light";
+  /* #### primary */
+  --Lime-Green: hsl(163, 72%, 41%);
+  --Bright-Red: hsl(356, 69%, 56%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --YouTube: hsl(348, 97%, 39%);
+  /* #### toggle */
+  --Toggle-dark: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
+  --Toggle-light: hsl(230, 22%, 74%);
+  /* #### Dark Theme */
+  --Very-Dark-Blue: hsl(230, 17%, 14%);
+  --Very-Dark-Blue-pattern: hsl(232, 19%, 15%);
+  --Dark-Desaturated-Blue: hsl(228, 28%, 20%);
+  --Desaturated-Blue: hsl(228, 34%, 66%);
+  --White: hsl(0, 0%, 100%);
+  /* #### Light Theme */
+  --White: hsl(0, 0%, 100%);
+  --Very-Pale-Blue: hsl(225, 100%, 98%);
+  --Light-Grayish-Blue: hsl(227, 47%, 96%);
+  --Dark-Grayish-Blue: hsl(228, 12%, 44%);
+  --Very-Dark-Blue: hsl(230, 17%, 14%);
+
+  --bg-body: var(--White);
+  --bg-card: var(--Light-Grayish-Blue);
+  --bg-button: var(--Toggle-light);
+  --text-primary: var(--Very-Dark-Blue);
+  --text-accent: var(--Dark-Grayish-Blue);
+  /* #### typography */
+  --ff-primary: "Inter", sans-serif;
+
+  --fw-400: 400;
+  --fw-700: 700;
+
+  --fs-700: 3.5rem;
+  --fs-600: 1.875rem;
+  --fs-500: 1rem;
+  --fs-400: 0.875rem;
+  --fs-300: 0.75rem;
+}
+
+/* switch theme  */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mode: "dark";
+  }
+
+  :root:not([data-user-color-scheme]) {
+    --bg-body: var(--Very-Dark-Blue);
+    --bg-card: var(--Dark-Desaturated-Blue);
+    --bg-button: var(--Toggle-dark);
+    --text-primary: var(--White);
+    --text-accent: var(--Desaturated-Blue);
+  }
+}
+
+[data-user-color-scheme="dark"] {
+  --bg-body: var(--Very-Dark-Blue);
+  --bg-card: var(--Dark-Desaturated-Blue);
+  --bg-button: var(--Toggle-dark);
+  --text-primary: var(--White);
+  --text-accent: var(--Desaturated-Blue);
+}
+
+/* reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-700);
+  background-color: var(--bg-body);
+  line-height: 1.2;
+  min-height: 100vh;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* colors */
+
+.bg-body {
+  background-color: var(--bg-body);
+}
+.bg-card {
+  background-color: var(--bg-card);
+}
+
+.text-white {
+  color: var(--text-primary);
+}
+.text-accent {
+  color: var(--text-accent);
+}
+.text-green {
+  color: var(--Lime-Green);
+}
+.text-red {
+  color: var(--Bright-Red);
+}
+
+/* typography */
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fw-400 {
+  font-weight: var(--fw-400);
+}
+.fw-700 {
+  font-weight: var(--fw-700);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.ff-primary {
+  font-family: var(--ff-primary);
+}
+
+.letter-spacing-1 {
+  letter-spacing: 5px;
+}
+
+/* utility classes */
+.flex {
+  display: flex;
+  align-items: center;
+  gap: var(--gap, 0.25rem);
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.flow-sm {
+  --flow-space: 0.5em;
+}
+
+.container {
+  max-width: 70.5rem;
+  margin-inline: auto;
+  padding: 1em;
+}
+
+/* layout */
+.header {
+  justify-content: space-between;
+  padding-block: 3em;
+}
+.switch-theme-wrapper {
+  --gap: 1.25em;
+}
+.switch-theme-wrapper,
+.switch-theme-wrapper * {
+  cursor: pointer;
+}
+.switch-btn {
+  background: var(--bg-button);
+  width: 50px;
+  height: 25px;
+  border-radius: 50px;
+  border: 0;
+  position: relative;
+  display: grid;
+  place-content: center;
+  transition: transform 0.25s ease;
+}
+.switch-btn span {
+  display: inline-block;
+  width: 18px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  z-index: 10;
+  transition: transform 0.25s ease;
+}
+.switch-btn[aria-pressed="false"] span {
+  transform: translateX(65%);
+}
+.switch-btn[aria-pressed="true"] span {
+  transform: translateX(-65%);
+}
+.switch-theme-wrapper:hover > * {
+  filter: brightness(120%);
+  color: var(--text-primary);
+}
+
+@media (max-width: 35em) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .header > * {
+    padding-block: 1.25em;
+  }
+  .switch-theme-wrapper {
+    justify-content: space-between;
+    border-top: 1px solid var(--Dark-Grayish-Blue);
+  }
+}
+.cards {
+  display: grid;
+  gap: 2em;
+}
+
+.card {
+  border-radius: 0.5em;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+}
+.card:hover,
+.card:focus {
+  filter: contrast(90%);
+}
+
+.overview-cards {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.overview-card {
+  --flow-space: 1.5rem;
+  text-align: center;
+  margin-bottom: 1em;
+  position: relative;
+  border-radius: 0 0 0.5em 0.5em;
+}
+
+.overview-card header,
+.overview-card footer {
+  justify-content: center;
+}
+.overview-card header {
+  --gap: 0.7em;
+}
+.overview-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -5px;
+  height: 5px;
+  width: 100%;
+  border-radius: 0.5em 0.5em 0 0;
+}
+.overview-card--fb::before {
+  background: var(--Facebook);
+}
+.overview-card--insta::before {
+  background: var(--Instagram);
+}
+.overview-card--twitter::before {
+  background: var(--Twitter);
+}
+.overview-card--youtube::before {
+  background: var(--YouTube);
+}
+
+.details {
+  padding-block: 3em;
+}
+.details h2 {
+  margin-bottom: 1em;
+}
+
+.detail-cards {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.detail-cards > * {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+}
+.detail-cards > * :nth-child(even) {
+  justify-self: self-end;
+}

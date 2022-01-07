@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Ombrice</title>
+  </head>
+  <body>
+    <header class="header container flex">
+      <div class="flow flow-sm">
+        <h1 class="text-white fs-600">Social Media Dashboard</h1>
+        <p class="text-accent">Total Followers: 23,004</p>
+      </div>
+      <div class="switch-theme-wrapper flex">
+        <label for="switch-btn" class="text-accent"> Dark Mode </label>
+
+        <button
+          id="switch-btn"
+          class="switch-btn switch-btn--light"
+          aria-pressed="false"
+          aria-label="switch theme"
+        >
+          <span aria-hidden="true" class="circle bg-body"></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="cards overview-cards">
+        <article class="card overview-card bg-card flow overview-card--fb">
+          <header class="flex">
+            <img src="images/icon-facebook.svg" alt="facebook" />
+            <h2 class="text-accent fs-300">@nathanf</h2>
+          </header>
+          <div class="followers">
+            <p class="text-white fs-700">1987</p>
+            <p class="text-accent uppercase fw-400 letter-spacing-1 fs-300">
+              followers
+            </p>
+          </div>
+          <footer class="flex">
+            <img src="images/icon-up.svg" alt="followers increased" />
+            <p class="text-green fs-300">12 Today</p>
+          </footer>
+        </article>
+
+        <article class="card overview-card bg-card flow overview-card--twitter">
+          <header class="flex">
+            <img src="images/icon-twitter.svg" alt="twitter" />
+            <h2 class="text-accent fs-300">@nathanf</h2>
+          </header>
+          <div class="followers">
+            <p class="text-white fs-700">1044</p>
+            <p class="text-accent uppercase fw-400 letter-spacing-1 fs-300">
+              followers
+            </p>
+          </div>
+          <footer class="flex">
+            <img src="images/icon-up.svg" alt="followers increased" />
+            <p class="text-green fs-300">99 Today</p>
+          </footer>
+        </article>
+
+        <article class="card overview-card bg-card flow overview-card--insta">
+          <header class="flex">
+            <img src="images/icon-instagram.svg" alt="instagram" />
+            <h2 class="text-accent fs-300">@realnathanf</h2>
+          </header>
+          <div class="followers">
+            <p class="text-white fs-700">11k</p>
+            <p class="text-accent uppercase fw-400 letter-spacing-1 fs-300">
+              followers
+            </p>
+          </div>
+          <footer class="flex">
+            <img src="images/icon-up.svg" alt="followers increased" />
+            <p class="text-green fs-300">1099 Today</p>
+          </footer>
+        </article>
+
+        <article class="card overview-card bg-card flow overview-card--youtube">
+          <header class="flex">
+            <img src="images/icon-facebook.svg" alt="facebook" />
+            <h2 class="text-accent fs-300">@Nathan F.</h2>
+          </header>
+          <div class="followers">
+            <p class="text-white fs-700">1987</p>
+            <p class="text-accent uppercase fw-400 letter-spacing-1 fs-300">
+              subscribers
+            </p>
+          </div>
+          <footer class="flex">
+            <img src="images/icon-down.svg" alt="followers decreased" />
+            <p class="text-red">144 Today</p>
+          </footer>
+        </article>
+      </section>
+
+      <section class="details">
+        <h2 class="text-white fs-600">Overview - Today</h2>
+
+        <div class="cards detail-cards">
+          <article class="card detail-card bg-card">
+            <h3 class="text-accent fs-400">Page Views</h3>
+            <img src="images/icon-facebook.svg" alt="facebook" />
+            <p class="text-white fs-600">87</p>
+            <div class="flex">
+              <img src="images/icon-up.svg" alt="followers increased" />
+              <p class="text-green fs-300">3%</p>
+            </div>
+          </article>
+
+          <article class="card detail-card bg-card">
+            <h3 class="text-accent fs-400">Likes</h3>
+            <img src="images/icon-facebook.svg" alt="facebook" />
+            <p class="text-white fs-600">52</p>
+            <div class="flex">
+              <img src="images/icon-down.svg" alt="followers decreased" />
+              <p class="text-red fs-300">2%</p>
+            </div>
+          </article>
+
+          <article class="card detail-card bg-card">
+            <h3 class="text-accent fs-400">Likes</h3>
+            <img src="images/icon-instagram.svg" alt="instagram" />
+            <p class="text-white fs-600">8758</p>
+            <div class="flex">
+              <img src="images/icon-up.svg" alt="followers increased" />
+              <p class="text-green fs-300">2257%</p>
+            </div>
+          </article>
+
+          <article class="card detail-card bg-card">
+            <h3 class="text-accent fs-400">Profile Views</h3>
+            <img src="images/icon-instagram.svg" alt="instagram" />
+            <p class="text-white fs-600">52k</p>
+            <div class="flex">
+              <img src="images/icon-up.svg" alt="followers increased" />
+              <p class="text-green fs-300">1375%</p>
+            </div>
+          </article>
+
+          <article class="card detail-card bg-card">
+            <h3 class="text-accent fs-400">Retweets</h3>
+            <img src="images/icon-twitter.svg" alt="twitter" />
+            <p class="text-white fs-600">117</p>
+            <div class="flex">
+              <img src="images/icon-up.svg" alt="followers increased" />
+              <p class="text-green fs-300">303%</p>
+            </div>
+          </article>
+
+          <article class="card detail-card bg-card">
+            <h3 class="text-accent fs-400">Likes</h3>
+            <img src="images/icon-twitter.svg" alt="twitter" />
+            <p class="text-white fs-600">507</p>
+            <div class="flex">
+              <img src="images/icon-up.svg" alt="followers increased" />
+              <p class="text-green fs-300">553%</p>
+            </div>
+          </article>
+
+          <article class="card detail-card bg-card">
+            <h3 class="text-accent fs-400">Likes</h3>
+            <img src="images/icon-youtube.svg" alt="youtube" />
+            <p class="text-white fs-600">107</p>
+            <div class="flex">
+              <img src="images/icon-down.svg" alt="followers decreased" />
+              <p class="text-red fs-300">19%</p>
+            </div>
+          </article>
+
+          <article class="card detail-card bg-card">
+            <h3 class="text-accent fs-400">Total Views</h3>
+            <img src="images/icon-youtube.svg" alt="youtube" />
+            <p class="text-white fs-600">1407</p>
+            <div class="flex">
+              <img src="images/icon-down.svg" alt="followers decreased" />
+              <p class="text-red fs-300">12%</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
